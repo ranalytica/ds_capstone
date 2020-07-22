@@ -1,0 +1,101 @@
+---
+title: "Week 1 - Swiftkey"
+output: html_notebook
+---
+
+## Environment
+
+```{r env}
+library(rvest)
+library(tidyverse)
+library(NLP)
+library(tm)
+library(knitr)
+library(readr)
+library(openNLP)
+library(glue)
+```
+
+## Data Loading
+
+```{r download}
+if (!file.exists("data")) {
+        dir.create("data")}
+download.file("https://d396qusza40orc.cloudfront.net/dsscapstone/dataset/Coursera-SwiftKey.zip", destfile = "./data/Coursera-SwiftKey.zip")
+unzip("./data/Coursera-SwiftKey.zip", exdir = "./data")
+```
+
+
+
+```{r combining}
+files2 <- list.dirs("./data/final")
+lsfile <-  paste0(files2[2:5],"/",
+                  list.files(files2[2:5]))
+ldir <- normalizePath(files2[2:5], "rb")
+finaldir <- dir(path=ldir, full.names=TRUE)
+# fulltext <- lapply(finaldir,readLines)
+```
+
+
+```{r buildtable, message=FALSE, warning=FALSE, results='hide'}
+## Num_Words total number of words in a txt file
+## Mean_Words average word per line per txt file
+## Num_Lines number of lines per txt file
+Num_Words <- vector("numeric")
+Mean_Words <- vector("numeric")
+Num_Lines <- vector("numeric")
+Min_Words <- vector("numeric")
+Max_Words <- vector("numeric")
+for(i in 1:12){
+Num_Words[i] <- print(sum(stri_count_words(readLines(finaldir[[i]]))))
+Mean_Words[i] <- print(round(mean(stri_count_words(readLines(finaldir[[i]])))),digits=2)
+Min_Words[i] <- print(round(min(stri_count_words(readLines(finaldir[[i]])))),digits=2)
+Max_Words[i] <- print(round(max(stri_count_words(readLines(finaldir[[i]])))),digits=2)
+Num_Lines[i] <- print(length(readLines(finaldir[i])))
+}
+stricoun
+```
+
+
+```{r finaltable}
+list_files <- tibble('Name' = list.files(files2[2:5]), 
+                     'Size_MB' = round(file.size(finaldir)/10^6,digits =2),
+                     Lines = Num_Lines, Words = Num_Words, Min =Min_Words,
+                     Average= Mean_Words, Max=Max_Words)
+kable(list_files, align = c(rep('c', times= 5)))
+```
+
+```{r }
+enblog <- paste(readLines(finaldir[4], 1000), collapse = " ")
+enblog <- as.String(enblog)
+```
+
+
+```{r}
+word_ann <- Maxent_Word_Token_Annotator()
+sent_ann <- Maxent_Sent_Token_Annotator()
+```
+
+
+```{r}
+datatok <- annotate(enblog, list(sent_ann, word_ann))
+head(datatok)
+
+datatik <- AnnotatedPlainTextDocument(enblog, datatok)
+
+sents(datatik) %>% head(1)
+```
+```{r}
+words(datatik) %>% head(2)
+```
+
+```{r}
+pipeline <- list(sent_ann,
+                 word_ann,
+                 person_ann,
+                 location_ann,
+                 organization_ann)
+
+blogannotatation <- annotate(enblog, pipeline)
+```
+
