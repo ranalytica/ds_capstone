@@ -1753,6 +1753,13 @@ summary {
 <h2>Environment</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiV0FSTklORzogQW4gaWxsZWdhbCByZWZsZWN0aXZlIGFjY2VzcyBvcGVyYXRpb24gaGFzIG9jY3VycmVkXG5XQVJOSU5HOiBJbGxlZ2FsIHJlZmxlY3RpdmUgYWNjZXNzIGJ5IHdla2EuY29yZS5XZWthUGFja2FnZUNsYXNzTG9hZGVyTWFuYWdlciAoZmlsZTovaG9tZS9yYW5hbHl0aWNhL1IveDg2XzY0LXBjLWxpbnV4LWdudS1saWJyYXJ5LzQuMC9SV2VrYWphcnMvamF2YS93ZWthLmphcikgdG8gbWV0aG9kIGphdmEubGFuZy5DbGFzc0xvYWRlci5kZWZpbmVDbGFzcyhqYXZhLmxhbmcuU3RyaW5nLGJ5dGVbXSxpbnQsaW50LGphdmEuc2VjdXJpdHkuUHJvdGVjdGlvbkRvbWFpbilcbldBUk5JTkc6IFBsZWFzZSBjb25zaWRlciByZXBvcnRpbmcgdGhpcyB0byB0aGUgbWFpbnRhaW5lcnMgb2Ygd2VrYS5jb3JlLldla2FQYWNrYWdlQ2xhc3NMb2FkZXJNYW5hZ2VyXG5XQVJOSU5HOiBVc2UgLS1pbGxlZ2FsLWFjY2Vzcz13YXJuIHRvIGVuYWJsZSB3YXJuaW5ncyBvZiBmdXJ0aGVyIGlsbGVnYWwgcmVmbGVjdGl2ZSBhY2Nlc3Mgb3BlcmF0aW9uc1xuV0FSTklORzogQWxsIGlsbGVnYWwgYWNjZXNzIG9wZXJhdGlvbnMgd2lsbCBiZSBkZW5pZWQgaW4gYSBmdXR1cmUgcmVsZWFzZVxuIn0= -->
+<pre><code>WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by weka.core.WekaPackageClassLoaderManager (file:/home/ranalytica/R/x86_64-pc-linux-gnu-library/4.0/RWekajars/java/weka.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of weka.core.WekaPackageClassLoaderManager
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1760,84 +1767,383 @@ summary {
 <h2>Data Loading</h2>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlzdF9maWxlcyA8LSB0aWJibGUoJ05hbWUnID0gbGlzdC5maWxlcyhmaWxlczJbMjo1XSksIFxuICAgICAgICAgICAgICAgICAgICAgJ1NpemVfTUInID0gcm91bmQoZmlsZS5zaXplKGZpbmFsZGlyKS8xMF42LGRpZ2l0cyA9MiksXG4gICAgICAgICAgICAgICAgICAgICBMaW5lcyA9IE51bV9MaW5lcywgV29yZHMgPSBOdW1fV29yZHMsIE1pbiA9TWluX1dvcmRzLFxuICAgICAgICAgICAgICAgICAgICAgQXZlcmFnZT0gTWVhbl9Xb3JkcywgTWF4PU1heF9Xb3JkcylcbmthYmxlKGxpc3RfZmlsZXMsIGFsaWduID0gYyhyZXAoJ2MnLCB0aW1lcz0gNSkpKVxuYGBgIn0= -->
-<pre class="r"><code>list_files &lt;- tibble(&#39;Name&#39; = list.files(files2[2:5]), 
-                     &#39;Size_MB&#39; = round(file.size(finaldir)/10^6,digits =2),
-                     Lines = Num_Lines, Words = Num_Words, Min =Min_Words,
-                     Average= Mean_Words, Max=Max_Words)
-kable(list_files, align = c(rep(&#39;c&#39;, times= 5)))</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBpZiAoIWZpbGUuZXhpc3RzKFwiZGF0YVwiKSkge1xuIyAgICAgICAgZGlyLmNyZWF0ZShcImRhdGFcIil9XG4jIGRvd25sb2FkLmZpbGUoXCJodHRwczovL2QzOTZxdXN6YTQwb3JjLmNsb3VkZnJvbnQubmV0L2RzIyBzY2Fwc3RvbmUvZGF0YXNldC9Db3Vyc2VyYS1Td2lmdEtleS56aXBcIiwgZGVzdGZpbGUgPSBcIi4vZGF0YS9Db3Vyc2VyYS1Td2lmdEtleS56aXBcIilcbiMgdW56aXAoXCIuL2RhdGEvQ291cnNlcmEtU3dpZnRLZXkuemlwXCIsIGV4ZGlyID0gXCIuL2RhdGFcIilcbmBgYCJ9 -->
+<pre class="r"><code># if (!file.exists(&quot;data&quot;)) {
+#        dir.create(&quot;data&quot;)}
+# download.file(&quot;https://d396qusza40orc.cloudfront.net/ds# scapstone/dataset/Coursera-SwiftKey.zip&quot;, destfile = &quot;./data/Coursera-SwiftKey.zip&quot;)
+# unzip(&quot;./data/Coursera-SwiftKey.zip&quot;, exdir = &quot;./data&quot;)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZW5ibG9nIDwtIHBhc3RlKHJlYWRMaW5lcyhmaW5hbGRpcls0XSwgMTAwMCksIGNvbGxhcHNlID0gXCIgXCIpXG5lbmJsb2cgPC0gYXMuU3RyaW5nKGVuYmxvZylcbmBgYCJ9 -->
-<pre class="r"><code>enblog &lt;- paste(readLines(finaldir[4], 1000), collapse = &quot; &quot;)
-enblog &lt;- as.String(enblog)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud29yZF9hbm4gPC0gTWF4ZW50X1dvcmRfVG9rZW5fQW5ub3RhdG9yKClcbnNlbnRfYW5uIDwtIE1heGVudF9TZW50X1Rva2VuX0Fubm90YXRvcigpXG5gYGAifQ== -->
-<pre class="r"><code>word_ann &lt;- Maxent_Word_Token_Annotator()
-sent_ann &lt;- Maxent_Sent_Token_Annotator()</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VudHMoZGF0YXRpaykgJT4lIGhlYWQoMSlcblxuYGBgIn0= -->
-<pre class="r"><code>sents(datatik) %&gt;% head(1)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGRpclxuXG5gYGAifQ== -->
+<pre class="r"><code>ldir
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cbiBbMV0gXCJJblwiICAgICAgICAgXCJ0aGVcIiAgICAgICAgXCJ5ZWFyc1wiICAgICAgXCJ0aGVyZWFmdGVyXCJcbiBbNV0gXCIsXCIgICAgICAgICAgXCJtb3N0XCIgICAgICAgXCJvZlwiICAgICAgICAgXCJ0aGVcIiAgICAgICBcbiBbOV0gXCJPaWxcIiAgICAgICAgXCJmaWVsZHNcIiAgICAgXCJhbmRcIiAgICAgICAgXCJwbGF0Zm9ybXNcIiBcblsxM10gXCJ3ZXJlXCIgICAgICAgXCJuYW1lZFwiICAgICAgXCJhZnRlclwiICAgICAgXCJwYWdhblwiICAgICBcblsxN10gXCLigJxnb2Rz4oCdXCIgICAgIFwiLlwiICAgICAgICAgXG4ifQ== -->
-<pre><code>[[1]]
- [1] &quot;In&quot;         &quot;the&quot;        &quot;years&quot;      &quot;thereafter&quot;
- [5] &quot;,&quot;          &quot;most&quot;       &quot;of&quot;         &quot;the&quot;       
- [9] &quot;Oil&quot;        &quot;fields&quot;     &quot;and&quot;        &quot;platforms&quot; 
-[13] &quot;were&quot;       &quot;named&quot;      &quot;after&quot;      &quot;pagan&quot;     
-[17] &quot;“gods”&quot;     &quot;.&quot;         </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud29yZHMoZGF0YXRpaykgJT4lIGhlYWQoMilcblxuYGBgIn0= -->
-<pre class="r"><code>words(datatik) %&gt;% head(2)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiSW5cIiAgXCJ0aGVcIlxuIn0= -->
-<pre><code>[1] &quot;In&quot;  &quot;the&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiL2hvbWUvcmFuYWx5dGljYS9Eb2N1bWVudHMvclBvcnRmb2xpby9EUyBDYXBzdG9uZS93ZWVrMS9kYXRhL2ZpbmFsL2RlX0RFXCJcblsyXSBcIi9ob21lL3JhbmFseXRpY2EvRG9jdW1lbnRzL3JQb3J0Zm9saW8vRFMgQ2Fwc3RvbmUvd2VlazEvZGF0YS9maW5hbC9lbl9VU1wiXG5bM10gXCIvaG9tZS9yYW5hbHl0aWNhL0RvY3VtZW50cy9yUG9ydGZvbGlvL0RTIENhcHN0b25lL3dlZWsxL2RhdGEvZmluYWwvZmlfRklcIlxuWzRdIFwiL2hvbWUvcmFuYWx5dGljYS9Eb2N1bWVudHMvclBvcnRmb2xpby9EUyBDYXBzdG9uZS93ZWVrMS9kYXRhL2ZpbmFsL3J1X1JVXCJcbiJ9 -->
+<pre><code>[1] &quot;/home/ranalytica/Documents/rPortfolio/DS Capstone/week1/data/final/de_DE&quot;
+[2] &quot;/home/ranalytica/Documents/rPortfolio/DS Capstone/week1/data/final/en_US&quot;
+[3] &quot;/home/ranalytica/Documents/rPortfolio/DS Capstone/week1/data/final/fi_FI&quot;
+[4] &quot;/home/ranalytica/Documents/rPortfolio/DS Capstone/week1/data/final/ru_RU&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuP3NlbnRfYW5uXG5cbmBgYCJ9 -->
-<pre class="r"><code>?sent_ann
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+
+<!-- rnb-html-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImtuaXRfYXNpcyJdLCJzaXppbmdQb2xpY3kiOltdfX0= -->
+
+<table>
+<thead>
+<tr class="header">
+<th align="center">Name</th>
+<th align="center">Size_MB</th>
+<th align="center">Lines</th>
+<th align="center">Words</th>
+<th align="center">Min</th>
+<th align="center">Average</th>
+<th align="center">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">de_DE.blogs.txt</td>
+<td align="center">85.46</td>
+<td align="center">371440</td>
+<td align="center">12682659</td>
+<td align="center">0</td>
+<td align="center">34</td>
+<td align="center">1638</td>
+</tr>
+<tr class="even">
+<td align="center">de_DE.news.txt</td>
+<td align="center">95.59</td>
+<td align="center">244743</td>
+<td align="center">13375092</td>
+<td align="center">1</td>
+<td align="center">55</td>
+<td align="center">603</td>
+</tr>
+<tr class="odd">
+<td align="center">de_DE.twitter.txt</td>
+<td align="center">75.58</td>
+<td align="center">947774</td>
+<td align="center">11646033</td>
+<td align="center">0</td>
+<td align="center">12</td>
+<td align="center">42</td>
+</tr>
+<tr class="even">
+<td align="center">en_US.blogs.txt</td>
+<td align="center">210.16</td>
+<td align="center">899288</td>
+<td align="center">37546250</td>
+<td align="center">0</td>
+<td align="center">42</td>
+<td align="center">6726</td>
+</tr>
+<tr class="odd">
+<td align="center">en_US.news.txt</td>
+<td align="center">205.81</td>
+<td align="center">1010242</td>
+<td align="center">34762395</td>
+<td align="center">1</td>
+<td align="center">34</td>
+<td align="center">1796</td>
+</tr>
+<tr class="even">
+<td align="center">en_US.twitter.txt</td>
+<td align="center">167.11</td>
+<td align="center">2360148</td>
+<td align="center">30093372</td>
+<td align="center">1</td>
+<td align="center">13</td>
+<td align="center">47</td>
+</tr>
+<tr class="odd">
+<td align="center">fi_FI.blogs.txt</td>
+<td align="center">108.50</td>
+<td align="center">439785</td>
+<td align="center">12785318</td>
+<td align="center">0</td>
+<td align="center">29</td>
+<td align="center">2353</td>
+</tr>
+<tr class="even">
+<td align="center">fi_FI.news.txt</td>
+<td align="center">94.23</td>
+<td align="center">485758</td>
+<td align="center">10532432</td>
+<td align="center">1</td>
+<td align="center">22</td>
+<td align="center">478</td>
+</tr>
+<tr class="odd">
+<td align="center">fi_FI.twitter.txt</td>
+<td align="center">25.33</td>
+<td align="center">285214</td>
+<td align="center">3147083</td>
+<td align="center">1</td>
+<td align="center">11</td>
+<td align="center">44</td>
+</tr>
+<tr class="even">
+<td align="center">ru_RU.blogs.txt</td>
+<td align="center">116.86</td>
+<td align="center">337100</td>
+<td align="center">9388482</td>
+<td align="center">1</td>
+<td align="center">28</td>
+<td align="center">1197</td>
+</tr>
+<tr class="odd">
+<td align="center">ru_RU.news.txt</td>
+<td align="center">119.00</td>
+<td align="center">196360</td>
+<td align="center">9057248</td>
+<td align="center">1</td>
+<td align="center">46</td>
+<td align="center">1581</td>
+</tr>
+<tr class="even">
+<td align="center">ru_RU.twitter.txt</td>
+<td align="center">105.18</td>
+<td align="center">881414</td>
+<td align="center">9231328</td>
+<td align="center">1</td>
+<td align="center">10</td>
+<td align="center">36</td>
+</tr>
+</tbody>
+</table>
+
+
+<!-- rnb-html-end -->
+
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc291cmNlX2RhdGEgPC0gRGlyU291cmNlKGxkaXIpXG5cbmNvcnB1c19kYXRhIDwtIFZDb3JwdXMoc291cmNlX2RhdGEpXG5cbnN1bW1hcnkoY29ycHVzX2RhdGEpXG5pbnNwZWN0KGNvcnB1c19kYXRhWzVdKVxubWV0YShjb3JwdXNfZGF0YVtbNV1dLCBcImlkXCIpXG5gYGAifQ== -->
+<pre class="r"><code>source_data &lt;- DirSource(ldir)
+
+corpus_data &lt;- VCorpus(source_data)
+
+summary(corpus_data)
+inspect(corpus_data[5])
+meta(corpus_data[[5]], &quot;id&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudXNfbmV3cyA8LSB0bV9tYXAodXNfbmV3cywgc3RyaXBXaGl0ZXNwYWNlKVxudXNfbmV3cyA8LSB0bV9tYXAodXNfbmV3cywgc3RlbURvY3VtZW50KVxudXNfbmV3cyA8LSB0bV9tYXAodXNfbmV3cywgcmVtb3ZlU3BlY2lhbENoYXJzKVxudXNfbmV3c190cml4IDwtIERvY3VtZW50VGVybU1hdHJpeCh1c19uZXdzKVxuXG5gYGAifQ== -->
+<pre class="r"><code>us_news &lt;- tm_map(us_news, stripWhitespace)
+us_news &lt;- tm_map(us_news, stemDocument)
+us_news &lt;- tm_map(us_news, removeSpecialChars)
+us_news_trix &lt;- DocumentTermMatrix(us_news)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTm8gZG9jdW1lbnRhdGlvbiBmb3Ig4oCYc2VudF9hbm7igJkgaW4gc3BlY2lmaWVkIHBhY2thZ2VzIGFuZCBsaWJyYXJpZXM6XG55b3UgY291bGQgdHJ5IOKAmD8/c2VudF9hbm7igJlcbiJ9 -->
-<pre><code>No documentation for ‘sent_ann’ in specified packages and libraries:
-you could try ‘??sent_ann’</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gVXNlTWV0aG9kKFwibWV0YVwiLCB4KSA6IFxuICBubyBhcHBsaWNhYmxlIG1ldGhvZCBmb3IgJ21ldGEnIGFwcGxpZWQgdG8gYW4gb2JqZWN0IG9mIGNsYXNzIFwiY2hhcmFjdGVyXCJcbiJ9 -->
+<pre><code>Error in UseMethod(&quot;meta&quot;, x) : 
+  no applicable method for &#39;meta&#39; applied to an object of class &quot;character&quot;</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuTkFcbmBgYCJ9 -->
+<pre class="r"><code>NA</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zcGVjdCh1c19uZXdzX3RyaXgpXG5maW5kRnJlcVRlcm1zKHVzX25ld3NfdHJpeCwgMjUpXG5maW5kQXNzb2NzKHVzX25ld3NfdHJpeCwgXCJmZWV0XCIsIC4xKVxuaW5zcGVjdChyZW1vdmVTcGFyc2VUZXJtcyh1c19uZXdzX3RyaXgsLjQpKVxuVGVybXModXNfbmV3c190cml4KVxuZnJlcXEgPC0gY29sU3Vtcyhhcy5tYXRyaXgodXNfbmV3c190cml4KSlcbmBgYCJ9 -->
+<pre class="r"><code>inspect(us_news_trix)
+findFreqTerms(us_news_trix, 25)
+findAssocs(us_news_trix, &quot;feet&quot;, .1)
+inspect(removeSparseTerms(us_news_trix,.4))
+Terms(us_news_trix)
+freqq &lt;- colSums(as.matrix(us_news_trix))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuVmlldyhyZXV0ZXJzKVxuXG5gYGAifQ== -->
+<pre class="r"><code>View(reuters)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gVmlldyA6IG9iamVjdCAncmV1dGVycycgbm90IGZvdW5kXG4ifQ== -->
+<pre><code>Error in View : object &#39;reuters&#39; not found</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudW5pcXVlKHdmJGZyZXEpXG5cbmBgYCJ9 -->
+<pre class="r"><code>unique(wf$freq)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgWzFdICAgICAgMSAgICAgMTMgICAgICAyICAgICAgNyAgICAgIDQgICAgICA4ICAgICAxMiAgICAgIDMgICAgICA2ICAgICAgNVxuICBbMTFdICAgICAyNCAgICAgMTAgICAgIDE2ICAgICAzNyAgICAgMjkgICAgMTA4ICAgICAyNyAgICAgMzAgICAgIDYyICAgICAxNVxuICBbMjFdICAgICAzMyAgICAgMTEgICAgIDUzICAgICAxNCAgICAgIDkgICAgIDIwICAgICA1NSAgICAgMzUgICAgIDQ2ICAgICAyNlxuICBbMzFdICAgICAxOSAgICAgMTcgICAgIDQyICAgICA3NyAgICAxMDAgICAgIDU0ICAgICA1MiAgICAgMjIgICAgIDY0ICAgICAxOFxuICBbNDFdICAgICAyMSAgICAgODEgICAgIDM0ICAgICA3MSAgICAxNzkgICAgIDM5ICAgICA2MyAgICA1MTQgICAgIDQzICAgIDI0M1xuICBbNTFdICAgIDE2OSAgICAgMjMgICAgMTEwICAgICAyNSAgICAgMzYgICAgNjcxICAgICA0OSAgICAgNDEgICAgIDQ3ICAgICA4M1xuICBbNjFdICAgICA2NSAgICAgODUgICAgMTg3ICAgICA3NCAgICAgNDggICAgIDI4ICAgICA1NyAgICAgMzIgICAgOTc4ICAgIDQyNFxuICBbNzFdICAgICA3MyAgICAgNDQgICAgMTMwICAgICA2OCAgICAgODYgICAgNzgwICAgIDI0NiAgICA2NjQgICAgIDU4ICAgIDM1MlxuICBbODFdICAgICA5MyAgIDE0MDkgICAxNTE0ICAgIDE0NCAgICAxMTQgICAgIDQ1ICAgICAzOCAgICAgNTAgICAgMzI0ICAgICA3MFxuICBbOTFdICAgIDIyMiAgICAxNDkgICAgIDk4ICAgICA4MCAgICAgNjcgICAgMTg4ICAgIDIyNiAgICAxNDIgICAgIDYxICAgIDI1MFxuIFsxMDFdICAgICA3NiAgICAyNjkgICAgIDcyICAgIDMzOSAgICAzNTkgICAzMTgzICAgICAzMSAgICAgNTEgICAgNDA0ICAgIDExMVxuIFsxMTFdICAgIDYyNCAgICAxNDggICAgODcxICAgIDIwMSAgIDI0NjYgICAgNDg1ICAgIDIwMCAgICA0NzIgICAgIDU5ICAgIDExNlxuIFsxMjFdICAgICA0MCAgICA3MTEgICAgIDg4ICAgIDQ1NSAgIDEwMjIgICAgMTQzICAgIDEwNiAgICAyOTggICAgODczICAgIDEyN1xuIFsxMzFdICAgICA2OSAgICAxODkgICAgMjY3ICAgIDIwMyAgICA1ODcgICAgMTU3ICAgICA5NiAgICAxMDkgICAgIDg0ICAgIDE4MlxuIFsxNDFdICAgIDE0MSAgICAgNjAgICAgMjk2ICAgMzQ3MCAgIDkzMTggICAgIDg3ICAgIDYwMyAgICAgOTkgICAgNzM4ICAgIDI3OVxuIFsxNTFdICAgIDEzNCAgODk1MjcgICAzNTc0ICAgIDI3NiAgICAxMDUgICAgNTM4ICAgIDI0MCAgICAgODkgICAgNzg1ICAgIDM1OFxuIFsxNjFdICAgIDE1OCAgICAzNjMgICAxNTYxICAgIDI3NyAgICAyMjMgICAgMjMzICAgIDIyMCAgICAxNTkgICAgMTY3ICAgMjIxOVxuIFsxNzFdICAgIDQzNSAgICAgNTYgICAgMjU3ICAgIDE3OCAgIDE1NDggICAgMjg3ICAgMjIyMyAgICAgNjYgICAgMTc2ICAgIDE5OFxuIFsxODFdICAgIDExMyAgICAgNzUgICAgMjcwICAgMTUzNyAgICAzNzYgICAgMzA3ICAgMTU2OSAgICA2MDYgICAgMTMxICAgMzU5N1xuIFsxOTFdICAgICA5NyAgICA1NjcgICAgMzYxICAgICA5NCAgIDE5MDQgICAgMjQ3ICAgIDI5NCAgICA0NzcgICAgMjI4ICAgIDExOVxuIFsyMDFdICAgIDYxOCAgICAgOTIgICAgMjY2ICAgIDY5MiAgICAyMDcgICAgMjk1ICAgICA3OCAgICA0NjEgICAgNzE5ICAgIDMzN1xuIFsyMTFdICAgIDIwMiAgMTc4MjEgICAgMTY1ICAgMjc4MCAgICA2MTQgICAgMzY0ICAgIDcxMyAgIDE2MTcgICAgMTU0ICAgIDE3MFxuIFsyMjFdICAgIDYzMCAgICAyMjQgICAgNDg3ICAgMjkxOSAgICAxNjEgICAgMzQ0ICAgIDg1MiAgICA1MjEgICAgODM1ICAgIDIzNlxuIFsyMzFdICAgIDIxNyAgICAxNzQgICAgMzQyICAgICA5MCAgICA1MzYgICAxNjQzICAgIDMzOCAgICAxMDMgICAgMjA2ICAgIDEwNFxuIFsyNDFdICAgIDM2MCAgICA4NTEgICAgMjMyICAgIDUyNyAgICA5OTQgICA4MjQyICAgNDg3OSAgICAzODkgICAgNjE1ICAgMTY0N1xuIFsyNTFdICAgNDkzNiAgIDE4MDkgICAxODc1ICAgIDM1NCAgICAxNDAgICAxMDc1ICAgMjQxMSAgIDIxNjIgICAxNTQ2ICAgMTE1MVxuIFsyNjFdICAgMTAyOCAgIDEwNjYgICAxMjYxICAgNTU1MiAgIDE1NDAgICAyMTI5ICAgIDI2MiAgICAyNzMgICAgMzgwICAgNTg2N1xuIFsyNzFdICAgODY4NCAgICA0NDYgICAgMTE4ICAgIDEyNiAgIDM1ODAgICA0MTM0ICAgNDA1NSAgICAzNDYgICAzMzM5ICAgIDc5M1xuIFsyODFdICAgIDQ1MCAgICA0NDQgICAxNTAzICAgIDE2MCAgICAxMjIgICAgMTA3ICAgIDQ4MiAgICAyMDggICAgNTA2ICAgIDEzN1xuIFsyOTFdICAgIDUyMyAgICA2MDkgICAgMzAyICAgIDM2OCAgICAxNDcgICAgMTIxICAgNTA4NiAgICA1NzYgICAxMDY3ICAgMTA2OVxuIFszMDFdICAgIDkxOCAgICAyMTUgICAxMzA5ICAgIDY0NCAgICA0ODYgICAxODMwICAgIDE2MiAgICAyMDkgICAgNTQwICAgMTA2OFxuIFszMTFdICAgIDEzNiAgICAxMzUgICAgMjg4ICAgMTIyMyAgIDE4MDAgICAyMzgyICAgMjAzOSAgIDEzNzEgICAgMzE2ICAgMjc1NlxuIFszMjFdICAgIDI4MCAgICA2NzcgICAgMzgyICAgIDE0NiAgICAyMzkgICAgIDk1ICAgMTIyNSAgIDE1NzcgICAgNTkzICAgIDY5OFxuIFszMzFdICAgIDQzOSAgICAxNTIgICAgMjM1ICAgIDk0NyAgICA3MjQgICAgODU1ICAgMTM2NiAgICAxOTcgICAgMTAxICAgIDE5MlxuIFszNDFdICAgICA3OSAgICA3NTkgICAxMzg2ICAgMTQ0OSAgIDE0NjggICAgMzc3ICAgIDQ1MiAgICAzNzggICAgMzQwICAgIDE4NVxuIFszNTFdICAgMTU0NSAgIDEyNzUgICAgMTI1ICAgIDg2NCAgIDE5MzcgICAgMTgwICAgIDk5MCAgICA4MTQgICAxMDk4ICAgIDQ5OFxuIFszNjFdICAgIDE2NCAgNjI0MTYgICAgMzUwICAgNDM5MyAgICAxNjYgICAgMTcyICAgIDg5MyAgMTA5MTggIDIzMzMxICAgNTgyM1xuIFszNzFdICAgMjE1OCAgIDYwMTIgICAgMTQ1ICAgIDYzNCAgIDEwMTAgICAyNzQ1ICAgMjAyNSAgIDE5OTYgICAgNzEwICAgMTQyNlxuIFszODFdICAgIDQ0OCAgICAxMDIgICAgODA2ICAxMjk4OCAgIDIxODAgICAzOTE4ICAgIDI4MyAgIDM5MTEgICAgNjU5ICAgIDQwNlxuIFszOTFdICAgIDY4NCAgIDQyMDMgICAxOTkzICAgIDE5NiAgICA1MDkgICAgMTMyICAgIDQ5NCAgIDEwMzcgICAgNDc2ICAgIDI1MVxuIFs0MDFdICAgNTgyNCAgICA4NTggICAgMjkxICAgIDIxMCAgIDEwNjAgICAxNzE5ICAgIDI4NSAgIDI3MDcgICAgNTYyICAgIDQwOFxuIFs0MTFdICAgIDMxOSAgICAyMTQgICAxMTA5ICAgMTA2NCAgICAzMDQgICAgODAyICAgIDQ2OSAgICAxMjQgICAgMTM4ICAgIDI1NVxuIFs0MjFdICAgIDc2NiAgICAxNTMgICAxOTYzICAgIDQ3OCAgIDE4NTUgICAgMTg0ICAgIDMwNSAgICA5ODMgICAgNjM5ICAgIDEyOFxuIFs0MzFdICAgIDg2NiAgICAyMTkgICAgNDIxICAgIDE5NSAgICAxODMgICAgMTEyICAgIDE2OCAgIDEzMTggIDY1NTY3ICAgIDM5MVxuIFs0NDFdICAgIDE5MSAgICAxODYgICAgMjMxICAgMTc1NCAgIDE5NzQgICAxNjc2ICAgIDM0MyAgIDIwMTggICAgMzk5ICAgIDkwOVxuIFs0NTFdICAgIDUzNyAgICAzMTIgICA0NjY2ICAgNTM0NyAgIDIzMDAgICAxMjA4ICAgIDc5NCAgICAzNzEgICAgMjU0ICAgNzY4MVxuIFs0NjFdICAgMjg4MCAgMTA5NjggICAgOTMyICAgIDEzMyAgICAxMzkgICAgMTcxICAgIDUxMyAgMTA4MDEgICAgIDgyICA1ODcyN1xuIFs0NzFdICAgIDM0NyAgICAzMzYgICAxNTY2ICAgIDQ4OCAgIDY3MDEgICAgMjI3ICAgIDM4NCAgICAzOTUgICAgMzgzICAgIDMxMFxuIFs0ODFdICAxMjA5OSAgICAzNDEgICAgNDMwICAgIDM5OCAgIDE3NjkgICAgNDI2ICAgIDQzMiAgICAzNzMgICAgMTk0ICAgIDYwMlxuIFs0OTFdICAgIDQ2OCAgICAyMDUgICAxNDg4ICAgIDI3OCAgIDU2NjYgIDEyNDgyICAgNDU0MCAgIDEzOTMgICAxNDAyICAxMjQwOFxuIFs1MDFdICAgNDA4NSAgICAxOTAgICAgOTMxICAgIDExNSAgICAyNzIgICAgMTI5ICAgIDE4MSAgICAyMzAgICAgNzg5ICAgIDU2M1xuIFs1MTFdICAgIDUxOSAgIDE2NzkgICAxNzc1ICAgMjIzMCAgICAyNDkgICAgNTYwICAgIDYwOCA4ODM2MzAgICAxNzE0ICAgIDQ2NFxuIFs1MjFdICAgIDU4MCAgIDIwNDIgICAgNDUzICAgMTE5NCAgIDUyNjIgICAxMjUzICAgIDgyOCAgICAzMTEgICAgMjEzICAgMTA4NFxuIFs1MzFdICAgMTk3OCAgICA5MjAgICAxMzQ1ICAgIDU0OSAgICA4MDAgICAgMjc1ICAgMTQwMCAgICA3NzUgICA1OTEyICAgMTYwNFxuIFs1NDFdICAgIDU2MSAgIDU3MTcgICAxMTMyICAgIDUxNiAgICA1NjUgIDIyMDg3ICAgMzM4NyAgICA4ODIgICAxMTQyICAgIDI1MlxuIFs1NTFdICAgMjMzNSAgICAxNTAgICAgMTE3ICAgIDMyMSAgICA2NDcgICAgMzE0ICAgIDg4MCAgICA0ODQgICAgMzEzICAyNjA4NVxuIFs1NjFdICAgMTUwNSAgIDEwMjkgICA1NDAyICAgNzE2MiAgICA0MjUgICAxMTYzICAgMTM2OSAgICAgOTEgICAxMzc2ICAgMjI3N1xuIFs1NzFdICAgIDcyNyAgICAzNDUgICAgNDMzICAgIDM0OSAgICA4ODMgICAgMzAxICAgIDkxMSAgIDIwODQgICAyMTU5ICAgIDUyOVxuIFs1ODFdICAgMTMyNiAgIDI1NjUgICAxODMzICAgMzQzNyAgICA0ODEgICAyNDA3ICAgIDQ5MyAgICAxNTEgICAyNTczICAgIDkxNlxuIFs1OTFdICAgIDUxMiAgIDEyNzkgICAxMTIyICAgMTAzOSAgICAzNjYgICAgMzk2ICAgIDI2NSAgIDExODIgICAgODQ4ICAgIDQxM1xuIFs2MDFdICAgIDk1MiAgICA0MzYgICAzMDc1ICAgMTAyMSAgIDEyOTQgICAyMTYwICAgMTE2OSAgIDM1NzEgICAgMjc0ICAgIDg2MVxuIFs2MTFdICAgIDU2NCAgMTIxNDEgICAgNDk1ICAgIDMzMCAgICAzMzUgICAgMjY4ICAgIDY0MCAgICAzODUgICAgNDA3ICAgIDY3MlxuIFs2MjFdICAgIDIwNCAxMzg2NjAgIDEyNzYyICAgNDg2OSAgICA0MjIgICAxOTE2ICAgMzU5MyAgICAxMjAgICAgMzc5ICAgMTE5NVxuIFs2MzFdICAgMTY2OCAgICA0NjAgICAgNzUyICAgMTM1MyAgICA4NjggICA1MjE2ICAgIDY0MiAgICA2MjkgICAxNzE3ICAgMTE0N1xuIFs2NDFdICAgMTQzNCAgIDI1NDkgICAgNTk5ICAgIDE1NiAgMTkyMDYgICAgMzE1ICAgIDQ0MyAgICA1ODUgICAyMzgwICAgNDQ5OFxuIFs2NTFdICAgIDY4NyAgICA5NDEgICAyODk0ICAgIDU3MCAgIDU3NTUgICAgNTExICAgMTI3NyAgICAyMzcgICAxODI2ICAgIDcyOFxuIFs2NjFdICAgMjIxMSAgIDMxOTQgICAgNTQyICAgIDcyMSAgIDExMDEgICAxOTkxICAgNDUwNyAgMTE1MDEgICAyOTczICAgIDk3MFxuIFs2NzFdICAgIDM5MyAgICA1NjggICAxODU5ICAgIDM1MSAgICAyMTEgICAgMjM4ICAgIDI0MSAgIDIxNDYgICAgMTc3ICAgIDc2MVxuIFs2ODFdICAgIDY0NiAgIDE0NDYgICAgODc5ICAgIDIyMSAgICA5NTggICAxMjQ5ICAgMzg1NyAgICAyODEgICAgMzk0ICAgMTg5NFxuIFs2OTFdICAgMTA0MiAgIDI5MTYgICA1Mjk4ICAgIDEyMyAgICAyMTYgICAgMjg2ICAgIDUwMCAgICA5NDAgICAxNDY1ICAgMjM3OFxuIFs3MDFdICAgIDI1OSAgICA2MzggICAyMTIzICAgMTcxMCAgIDEwNDggICAgNjQ5ICAgIDY1MiAgICA2ODYgICAzMTY5ICAgIDc2OFxuIFs3MTFdICAgIDE2MyAgIDIwMzIgICAyMzUxICAgMTI0MSAgICA2MjggICAyMTQwICAgIDk2MSAgIDIwMjMgICAxMDE2ICAgNDM3MFxuIFs3MjFdICAgNzgwNCAgIDI2OTIgICAgOTk4ICAgIDMyNyAgICA1NDMgICAgNDQ5ICAgIDczNCAgICAyNDIgICAgNDU4ICAgMTAxOFxuIFs3MzFdICAgMjYxOCAgICA2NjkgICAgMjI5ICAgMjA0MSAgIDI4MDUgICAgMjg5ICAgIDQwMCAgICAzMDYgICAxMDM1ICAgIDU4MlxuIFs3NDFdICAgIDM4NiAgIDE4NTcgICA0OTQyICAgMzU2MSAgICA2NjAgICAgNjIzICAgMTkzNSAgICA0NjYgICAgNTUzICAgNzMxMFxuIFs3NTFdICAgMjc3NSAgIDUzMTggICA2NjkyICAgMTA1MSAgICA5MzQgICAgNTM0ICAgMjg4NCAgICA0NjMgICAgNDAyICAgMzE0OVxuIFs3NjFdICAgMTA5MSAgIDIxMTMgICAgMjgyICAgMTY4NyAgICA4MDcgIDEyNDYyICAgIDQ5MiAgICA3MjkgICAyNTc5ICAgIDQyOVxuIFs3NzFdICAzMzEwNiAgICAzMjMgICAxMDg3ICAgIDMyOSAgICAyNjEgICAxMzI0ICAgIDIyNSAgICA3NzYgICAgODQzICAgIDU0NlxuIFs3ODFdICAgIDI0NSAgICA4NTAgICA2ODI1ICAgMTc4MiAgICAyNTggICAxMzA3ICAgIDUwMSAgICA2NDEgICAgOTMwICAgIDQzOFxuIFs3OTFdICAgIDg0NSAgIDI0NjAgICAgNzgzICAgIDIzNCAgICA0MTcgICA3MTY0ICAgIDUyNSAgIDIwMTkgICAgMzkwICAgMzg3NVxuIFs4MDFdICAgIDE3NSAgIDE1OTYgICAgMzAwICAgNDAyMCAgIDExNzAgICA2MzU2ICAgIDgwOCAgIDE3ODQgICAzNjI0ICAgIDU4NlxuIFs4MTFdICAgIDMwMyAgICA0OTkgICA0ODczICAgMjI4NiAgIDEwNTMgICAgNTMyICAgIDMyOCAgIDEyMzIgICAgNTIyICAgIDc4N1xuIFs4MjFdICAgIDM3MCAgICA3OTUgICAgNjU2ICAgIDQxNiAgICAzNzIgICAgMzIyICAgIDIxOCAgICA3NzIgICAxMzgzICAgIDI1NlxuIFs4MzFdICAgNDQ4MCAgIDM5MTMgICAgOTQ0ICAgIDcwMCAgIDEwMDUgICAxNTkzICAgMTExMCAgICAzNjIgICAxNDM4ICAgIDgxM1xuIFs4NDFdICAgNDMxNSAgICA5NTAgICAgODEwICAgIDQ5NiAgICA3NTQgICAgMzA5ICAgIDI2MyAgICA5NzEgICAyNjEyICAgIDQ4MFxuIFs4NTFdICAgIDQ5NyAgIDQ2NTQgICAgNDQ3ICAgNDQxNyAgICA0MTQgICAgOTU5ICAgMTYyNCAgICAzODcgICAxNzg5ICAgIDI0NFxuIFs4NjFdICAgNDM4MCAgICA3MzMgICAxMjM5ICAgMjEyNSAgIDEwNTIgICAgNzgxICAgNjQxMiAgMzg5MzAgICA4OTg4ICAgMTc1MlxuIFs4NzFdICAgMjA3MCAgIDE4MDEgICAgNTk4ICAgMTc0MCAgNjYxNDcgICAyODMwICAgIDgwOSAgMzM3NTggICA4MTA5ICAgNDA2M1xuIFs4ODFdICAgMzQ5OSAgIDIxMjEgICAxMTExICAgMTc2MiAgIDg0MTAgICAgODQyICAyMjcxMSAgICAxNzMgICAgNjc5ICAgNzY0NVxuIFs4OTFdICAgMjI3MiAgICAzMTcgICAxMjY2ICAgIDYxNyAgIDMwMzQgICAgMjcxICAgMTQzNSAgIDMzNzMgICA0NTUzICAgIDUwNVxuIFs5MDFdICAgIDcyNSAgICA2MTEgICAgNzE0ICAgIDI1MyAgICAzNjUgICAxMDcxICAxOTQ3NiAgICA5MDUgIDE1NjcwICAxNjYyOFxuIFs5MTFdICAgIDUxNSAgIDM2MzUgICAgNTMxICAgMTcxMiAgICA0MTAgIDE5Mzc5ICAgMjQ4MiAgIDQ4ODIgICAxMzkxICAxMjQ4OFxuIFs5MjFdICAxMDA3OSAgICA3MDIgICAzMzI1ICAgIDI5MiAgIDExMTggICAxMTg2ICAgMTUyMCAgIDEyNDcgICAgNTk0ICAgIDM4OFxuIFs5MzFdICAgNjA3NiAgICA2ODIgICAgNTgzICAgNzAyNSAgICAyOTMgICAgMzc1ICAgMTMxNSAgICA3MDcgICAgMTk5ICAgIDM0OFxuIFs5NDFdICAgMzY1NiAgICAzMjYgICAgNTU5ICAgNTExOCAgICAyODQgICAgOTY5ICAgIDUzMCAgICA5MTkgICAzMDU3ICAgIDUwNFxuIFs5NTFdICAgMTAwNCAgICAzNzQgICAzODkwICAgMjkxMSAgICA0NTQgICAxMTEyICAxNDI0MyAgIDE3MjcgICAgNTUxICAgMjY5MVxuIFs5NjFdICAgIDc3NyAgIDExOTAgICA1MDIwICAgIDQ1OSAgICA4NDAgICAgMjkwICAgIDc5OCAgICA1NzIgICAgNzQ4ICAgIDQyOFxuIFs5NzFdICAgNjIwMSAgICA2ODEgICAzNDE0ICAgIDYyNiAgIDE2NjEgICAgMzU2ICAgIDQwNSAgIDE5NDQgICAgNTkxICAgMzAzM1xuIFs5ODFdICAgIDQxNSAgICA1NzkgICAxMTI3ICAgMjQxOSAgMjAxMjYgICAgOTIzICAgMjgwOSAgIDI4MzkgICAxNTgzICAgIDQ0MVxuIFs5OTFdICAgIDQ3MSAgICA0NDIgICA0NjMyICAgMjU4NCAgIDMxNTYgICAgNzA2ICAgMzM2MiAgICA4NTkgICAgODExICAgMTczNFxuIFsgcmVhY2hlZCBnZXRPcHRpb24oXCJtYXgucHJpbnRcIikgLS0gb21pdHRlZCAyMzU5IGVudHJpZXMgXVxuIn0= -->
+<pre><code>   [1]      1     13      2      7      4      8     12      3      6      5
+  [11]     24     10     16     37     29    108     27     30     62     15
+  [21]     33     11     53     14      9     20     55     35     46     26
+  [31]     19     17     42     77    100     54     52     22     64     18
+  [41]     21     81     34     71    179     39     63    514     43    243
+  [51]    169     23    110     25     36    671     49     41     47     83
+  [61]     65     85    187     74     48     28     57     32    978    424
+  [71]     73     44    130     68     86    780    246    664     58    352
+  [81]     93   1409   1514    144    114     45     38     50    324     70
+  [91]    222    149     98     80     67    188    226    142     61    250
+ [101]     76    269     72    339    359   3183     31     51    404    111
+ [111]    624    148    871    201   2466    485    200    472     59    116
+ [121]     40    711     88    455   1022    143    106    298    873    127
+ [131]     69    189    267    203    587    157     96    109     84    182
+ [141]    141     60    296   3470   9318     87    603     99    738    279
+ [151]    134  89527   3574    276    105    538    240     89    785    358
+ [161]    158    363   1561    277    223    233    220    159    167   2219
+ [171]    435     56    257    178   1548    287   2223     66    176    198
+ [181]    113     75    270   1537    376    307   1569    606    131   3597
+ [191]     97    567    361     94   1904    247    294    477    228    119
+ [201]    618     92    266    692    207    295     78    461    719    337
+ [211]    202  17821    165   2780    614    364    713   1617    154    170
+ [221]    630    224    487   2919    161    344    852    521    835    236
+ [231]    217    174    342     90    536   1643    338    103    206    104
+ [241]    360    851    232    527    994   8242   4879    389    615   1647
+ [251]   4936   1809   1875    354    140   1075   2411   2162   1546   1151
+ [261]   1028   1066   1261   5552   1540   2129    262    273    380   5867
+ [271]   8684    446    118    126   3580   4134   4055    346   3339    793
+ [281]    450    444   1503    160    122    107    482    208    506    137
+ [291]    523    609    302    368    147    121   5086    576   1067   1069
+ [301]    918    215   1309    644    486   1830    162    209    540   1068
+ [311]    136    135    288   1223   1800   2382   2039   1371    316   2756
+ [321]    280    677    382    146    239     95   1225   1577    593    698
+ [331]    439    152    235    947    724    855   1366    197    101    192
+ [341]     79    759   1386   1449   1468    377    452    378    340    185
+ [351]   1545   1275    125    864   1937    180    990    814   1098    498
+ [361]    164  62416    350   4393    166    172    893  10918  23331   5823
+ [371]   2158   6012    145    634   1010   2745   2025   1996    710   1426
+ [381]    448    102    806  12988   2180   3918    283   3911    659    406
+ [391]    684   4203   1993    196    509    132    494   1037    476    251
+ [401]   5824    858    291    210   1060   1719    285   2707    562    408
+ [411]    319    214   1109   1064    304    802    469    124    138    255
+ [421]    766    153   1963    478   1855    184    305    983    639    128
+ [431]    866    219    421    195    183    112    168   1318  65567    391
+ [441]    191    186    231   1754   1974   1676    343   2018    399    909
+ [451]    537    312   4666   5347   2300   1208    794    371    254   7681
+ [461]   2880  10968    932    133    139    171    513  10801     82  58727
+ [471]    347    336   1566    488   6701    227    384    395    383    310
+ [481]  12099    341    430    398   1769    426    432    373    194    602
+ [491]    468    205   1488    278   5666  12482   4540   1393   1402  12408
+ [501]   4085    190    931    115    272    129    181    230    789    563
+ [511]    519   1679   1775   2230    249    560    608 883630   1714    464
+ [521]    580   2042    453   1194   5262   1253    828    311    213   1084
+ [531]   1978    920   1345    549    800    275   1400    775   5912   1604
+ [541]    561   5717   1132    516    565  22087   3387    882   1142    252
+ [551]   2335    150    117    321    647    314    880    484    313  26085
+ [561]   1505   1029   5402   7162    425   1163   1369     91   1376   2277
+ [571]    727    345    433    349    883    301    911   2084   2159    529
+ [581]   1326   2565   1833   3437    481   2407    493    151   2573    916
+ [591]    512   1279   1122   1039    366    396    265   1182    848    413
+ [601]    952    436   3075   1021   1294   2160   1169   3571    274    861
+ [611]    564  12141    495    330    335    268    640    385    407    672
+ [621]    204 138660  12762   4869    422   1916   3593    120    379   1195
+ [631]   1668    460    752   1353    868   5216    642    629   1717   1147
+ [641]   1434   2549    599    156  19206    315    443    585   2380   4498
+ [651]    687    941   2894    570   5755    511   1277    237   1826    728
+ [661]   2211   3194    542    721   1101   1991   4507  11501   2973    970
+ [671]    393    568   1859    351    211    238    241   2146    177    761
+ [681]    646   1446    879    221    958   1249   3857    281    394   1894
+ [691]   1042   2916   5298    123    216    286    500    940   1465   2378
+ [701]    259    638   2123   1710   1048    649    652    686   3169    768
+ [711]    163   2032   2351   1241    628   2140    961   2023   1016   4370
+ [721]   7804   2692    998    327    543    449    734    242    458   1018
+ [731]   2618    669    229   2041   2805    289    400    306   1035    582
+ [741]    386   1857   4942   3561    660    623   1935    466    553   7310
+ [751]   2775   5318   6692   1051    934    534   2884    463    402   3149
+ [761]   1091   2113    282   1687    807  12462    492    729   2579    429
+ [771]  33106    323   1087    329    261   1324    225    776    843    546
+ [781]    245    850   6825   1782    258   1307    501    641    930    438
+ [791]    845   2460    783    234    417   7164    525   2019    390   3875
+ [801]    175   1596    300   4020   1170   6356    808   1784   3624    586
+ [811]    303    499   4873   2286   1053    532    328   1232    522    787
+ [821]    370    795    656    416    372    322    218    772   1383    256
+ [831]   4480   3913    944    700   1005   1593   1110    362   1438    813
+ [841]   4315    950    810    496    754    309    263    971   2612    480
+ [851]    497   4654    447   4417    414    959   1624    387   1789    244
+ [861]   4380    733   1239   2125   1052    781   6412  38930   8988   1752
+ [871]   2070   1801    598   1740  66147   2830    809  33758   8109   4063
+ [881]   3499   2121   1111   1762   8410    842  22711    173    679   7645
+ [891]   2272    317   1266    617   3034    271   1435   3373   4553    505
+ [901]    725    611    714    253    365   1071  19476    905  15670  16628
+ [911]    515   3635    531   1712    410  19379   2482   4882   1391  12488
+ [921]  10079    702   3325    292   1118   1186   1520   1247    594    388
+ [931]   6076    682    583   7025    293    375   1315    707    199    348
+ [941]   3656    326    559   5118    284    969    530    919   3057    504
+ [951]   1004    374   3890   2911    454   1112  14243   1727    551   2691
+ [961]    777   1190   5020    459    840    290    798    572    748    428
+ [971]   6201    681   3414    626   1661    356    405   1944    591   3033
+ [981]    415    579   1127   2419  20126    923   2809   2839   1583    441
+ [991]    471    442   4632   2584   3156    706   3362    859    811   1734
+ [ reached getOption(&quot;max.print&quot;) -- omitted 2359 entries ]</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG53b3JkY2xvdWQyKGRfUmNyYW4pXG5gYGAifQ== -->
+<pre class="r"><code>
+wordcloud2(d_Rcran)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuUmNyYW5fbGlzdCA8LSBmaW5kRnJlcVRlcm1zKGRvY19tYXQsIGxvd2ZyZXEgPSAxMClcbmZpbmRGcmVxVGVybXMoZG9jX21hdCwgbG93ZnJlcSA9IDEwKVxuYGBgIn0= -->
+<pre class="r"><code>Rcran_list &lt;- findFreqTerms(doc_mat, lowfreq = 10)
+findFreqTerms(doc_mat, lowfreq = 10)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaW5zcGVjdCh0eHRtYXR4KVxuXG5gYGAifQ== -->
+<pre class="r"><code>inspect(txtmatx)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiPDxEb2N1bWVudFRlcm1NYXRyaXggKGRvY3VtZW50czogMSwgdGVybXM6IDM0NjUzOCk+PlxuTm9uLS9zcGFyc2UgZW50cmllczogMzQ2NTM4LzBcblNwYXJzaXR5ICAgICAgICAgICA6IDAlXG5NYXhpbWFsIHRlcm0gbGVuZ3RoOiAxMDJcbldlaWdodGluZyAgICAgICAgICA6IHRlcm0gZnJlcXVlbmN5ICh0ZilcblNhbXBsZSAgICAgICAgICAgICA6XG4gICAgICAgICAgICAgICAgVGVybXNcbkRvY3MgICAgICAgICAgICAgICAgYW5kICAgIGJ1dCAgICBmb3IgICBmcm9tICAgIGhpcyAgIHNhaWQgICB0aGF0XG4gIGVuX1VTLm5ld3MudHh0IDg4MzYzMCAxNTAyMDEgMzUyNjgzIDE1MTk3OSAxNTc0OTAgMjUwMzI2IDM0NTY2MlxuICAgICAgICAgICAgICAgIFRlcm1zXG5Eb2NzICAgICAgICAgICAgICAgICB0aGUgICAgd2FzICAgd2l0aFxuICBlbl9VUy5uZXdzLnR4dCAxOTY3Mjg1IDIyODgxNCAyNTQ1MDhcbiJ9 -->
+<pre><code>&lt;&lt;DocumentTermMatrix (documents: 1, terms: 346538)&gt;&gt;
+Non-/sparse entries: 346538/0
+Sparsity           : 0%
+Maximal term length: 102
+Weighting          : term frequency (tf)
+Sample             :
+                Terms
+Docs                and    but    for   from    his   said   that
+  en_US.news.txt 883630 150201 352683 151979 157490 250326 345662
+                Terms
+Docs                 the    was   with
+  en_US.news.txt 1967285 228814 254508</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYmFycGxvdChkX1JjcmFuWzE6MjUsXSRmcmVxLCBcbiAgICAgICAgbGFzID0gMiwgXG4gICAgICAgIG5hbWVzLmFyZyA9IGRfUmNyYW5bMToyNSxdJHdvcmQsXG4gICAgICAgIGNvbCA9XCJsaWdodHllbGxvd1wiLCBcbiAgICAgICAgbWFpbiA9XCJNb3N0IEZyZXF1ZW50IFdvcmRzIEZyb20gUi1jcmFuIFBhY2thZ2VzXCIsXG4gICAgICAgIHlsYWIgPSBcIldvcmQgQ291bnRcIilcbmBgYCJ9 -->
+<pre class="r"><code>barplot(d_Rcran[1:25,]$freq, 
+        las = 2, 
+        names.arg = d_Rcran[1:25,]$word,
+        col =&quot;lightyellow&quot;, 
+        main =&quot;Most Frequent Words From R-cran Packages&quot;,
+        ylab = &quot;Word Count&quot;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiV2VlayAxIC0gU3dpZnRrZXkiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIEVudmlyb25tZW50CgpgYGB7ciBlbnZ9CmxpYnJhcnkocnZlc3QpCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KE5MUCkKbGlicmFyeSh0bSkKbGlicmFyeShrbml0cikKbGlicmFyeShyZWFkcikKbGlicmFyeShvcGVuTkxQKQpsaWJyYXJ5KGdsdWUpCmBgYAoKIyMgRGF0YSBMb2FkaW5nCgpgYGB7ciBkb3dubG9hZH0KaWYgKCFmaWxlLmV4aXN0cygiZGF0YSIpKSB7CiAgICAgICAgZGlyLmNyZWF0ZSgiZGF0YSIpfQpkb3dubG9hZC5maWxlKCJodHRwczovL2QzOTZxdXN6YTQwb3JjLmNsb3VkZnJvbnQubmV0L2Rzc2NhcHN0b25lL2RhdGFzZXQvQ291cnNlcmEtU3dpZnRLZXkuemlwIiwgZGVzdGZpbGUgPSAiLi9kYXRhL0NvdXJzZXJhLVN3aWZ0S2V5LnppcCIpCnVuemlwKCIuL2RhdGEvQ291cnNlcmEtU3dpZnRLZXkuemlwIiwgZXhkaXIgPSAiLi9kYXRhIikKYGBgCgoKCmBgYHtyIGNvbWJpbmluZ30KZmlsZXMyIDwtIGxpc3QuZGlycygiLi9kYXRhL2ZpbmFsIikKbHNmaWxlIDwtICBwYXN0ZTAoZmlsZXMyWzI6NV0sIi8iLAogICAgICAgICAgICAgICAgICBsaXN0LmZpbGVzKGZpbGVzMlsyOjVdKSkKbGRpciA8LSBub3JtYWxpemVQYXRoKGZpbGVzMlsyOjVdLCAicmIiKQpmaW5hbGRpciA8LSBkaXIocGF0aD1sZGlyLCBmdWxsLm5hbWVzPVRSVUUpCiMgZnVsbHRleHQgPC0gbGFwcGx5KGZpbmFsZGlyLHJlYWRMaW5lcykKYGBgCgoKYGBge3IgYnVpbGR0YWJsZSwgbWVzc2FnZT1GQUxTRSwgd2FybmluZz1GQUxTRSwgcmVzdWx0cz0naGlkZSd9CiMjIE51bV9Xb3JkcyB0b3RhbCBudW1iZXIgb2Ygd29yZHMgaW4gYSB0eHQgZmlsZQojIyBNZWFuX1dvcmRzIGF2ZXJhZ2Ugd29yZCBwZXIgbGluZSBwZXIgdHh0IGZpbGUKIyMgTnVtX0xpbmVzIG51bWJlciBvZiBsaW5lcyBwZXIgdHh0IGZpbGUKTnVtX1dvcmRzIDwtIHZlY3RvcigibnVtZXJpYyIpCk1lYW5fV29yZHMgPC0gdmVjdG9yKCJudW1lcmljIikKTnVtX0xpbmVzIDwtIHZlY3RvcigibnVtZXJpYyIpCk1pbl9Xb3JkcyA8LSB2ZWN0b3IoIm51bWVyaWMiKQpNYXhfV29yZHMgPC0gdmVjdG9yKCJudW1lcmljIikKZm9yKGkgaW4gMToxMil7Ck51bV9Xb3Jkc1tpXSA8LSBwcmludChzdW0oc3RyaV9jb3VudF93b3JkcyhyZWFkTGluZXMoZmluYWxkaXJbW2ldXSkpKSkKTWVhbl9Xb3Jkc1tpXSA8LSBwcmludChyb3VuZChtZWFuKHN0cmlfY291bnRfd29yZHMocmVhZExpbmVzKGZpbmFsZGlyW1tpXV0pKSkpLGRpZ2l0cz0yKQpNaW5fV29yZHNbaV0gPC0gcHJpbnQocm91bmQobWluKHN0cmlfY291bnRfd29yZHMocmVhZExpbmVzKGZpbmFsZGlyW1tpXV0pKSkpLGRpZ2l0cz0yKQpNYXhfV29yZHNbaV0gPC0gcHJpbnQocm91bmQobWF4KHN0cmlfY291bnRfd29yZHMocmVhZExpbmVzKGZpbmFsZGlyW1tpXV0pKSkpLGRpZ2l0cz0yKQpOdW1fTGluZXNbaV0gPC0gcHJpbnQobGVuZ3RoKHJlYWRMaW5lcyhmaW5hbGRpcltpXSkpKQp9CnN0cmljb3VuCmBgYAoKCmBgYHtyIGZpbmFsdGFibGV9Cmxpc3RfZmlsZXMgPC0gdGliYmxlKCdOYW1lJyA9IGxpc3QuZmlsZXMoZmlsZXMyWzI6NV0pLCAKICAgICAgICAgICAgICAgICAgICAgJ1NpemVfTUInID0gcm91bmQoZmlsZS5zaXplKGZpbmFsZGlyKS8xMF42LGRpZ2l0cyA9MiksCiAgICAgICAgICAgICAgICAgICAgIExpbmVzID0gTnVtX0xpbmVzLCBXb3JkcyA9IE51bV9Xb3JkcywgTWluID1NaW5fV29yZHMsCiAgICAgICAgICAgICAgICAgICAgIEF2ZXJhZ2U9IE1lYW5fV29yZHMsIE1heD1NYXhfV29yZHMpCmthYmxlKGxpc3RfZmlsZXMsIGFsaWduID0gYyhyZXAoJ2MnLCB0aW1lcz0gNSkpKQpgYGAKCmBgYHtyIH0KZW5ibG9nIDwtIHBhc3RlKHJlYWRMaW5lcyhmaW5hbGRpcls0XSwgMTAwMCksIGNvbGxhcHNlID0gIiAiKQplbmJsb2cgPC0gYXMuU3RyaW5nKGVuYmxvZykKYGBgCgoKYGBge3J9CndvcmRfYW5uIDwtIE1heGVudF9Xb3JkX1Rva2VuX0Fubm90YXRvcigpCnNlbnRfYW5uIDwtIE1heGVudF9TZW50X1Rva2VuX0Fubm90YXRvcigpCmBgYAoKCmBgYHtyfQpkYXRhdG9rIDwtIGFubm90YXRlKGVuYmxvZywgbGlzdChzZW50X2Fubiwgd29yZF9hbm4pKQpoZWFkKGRhdGF0b2spCgpkYXRhdGlrIDwtIEFubm90YXRlZFBsYWluVGV4dERvY3VtZW50KGVuYmxvZywgZGF0YXRvaykKCnNlbnRzKGRhdGF0aWspICU+JSBoZWFkKDEpCmBgYApgYGB7cn0Kd29yZHMoZGF0YXRpaykgJT4lIGhlYWQoMikKYGBgCgpgYGB7cn0KcGlwZWxpbmUgPC0gbGlzdChzZW50X2FubiwKICAgICAgICAgICAgICAgICB3b3JkX2FubiwKICAgICAgICAgICAgICAgICBwZXJzb25fYW5uLAogICAgICAgICAgICAgICAgIGxvY2F0aW9uX2FubiwKICAgICAgICAgICAgICAgICBvcmdhbml6YXRpb25fYW5uKQoKYmxvZ2Fubm90YXRhdGlvbiA8LSBhbm5vdGF0ZShlbmJsb2csIHBpcGVsaW5lKQpgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiV2VlayAxIC0gU3dpZnRrZXkiCm91dHB1dDogCiAgaHRtbF9ub3RlYm9vazoKICAgIGNvZGVfZm9sZGluZzogaGlkZQotLS0KCiMjIEVudmlyb25tZW50CgpgYGB7ciBlbnYsIG1lc3NhZ2U9RkFMU0UsIHdhcm5pbmc9RkFMU0UsIGVjaG89RkFMU0V9CmVudmlybzwtIGMoInJ2ZXN0IiwgInRpZHl0ZXh0IiwgInRtIiwgInRpZHl2ZXJzZSIsICJOTFAiLCAKICAgICAgICAgICAia25pdHIiLCAicmVhZHIiLCAib3Blbk5MUCIsICJnbHVlIiwgIlJXZWthIiwgInN0cmluZ2kiLCAgICAKICAgICAgICAgICAiU25vd2JhbGxDIiwgIndvcmRjbG91ZDIiKQoKZm9yIChpIGluIDE6bGVuZ3RoKGVudmlybykpewpsaWJyYXJ5KGVudmlyb1tpXSwgY2hhcmFjdGVyLm9ubHkgPSBUUlVFKQp9CgpgYGAKCiMjIERhdGEgTG9hZGluZwoKYGBge3IgZG93bmxvYWR9CiMgaWYgKCFmaWxlLmV4aXN0cygiZGF0YSIpKSB7CiMgICAgICAgIGRpci5jcmVhdGUoImRhdGEiKX0KIyBkb3dubG9hZC5maWxlKCJodHRwczovL2QzOTZxdXN6YTQwb3JjLmNsb3VkZnJvbnQubmV0L2RzIyBzY2Fwc3RvbmUvZGF0YXNldC9Db3Vyc2VyYS1Td2lmdEtleS56aXAiLCBkZXN0ZmlsZSA9ICIuL2RhdGEvQ291cnNlcmEtU3dpZnRLZXkuemlwIikKIyB1bnppcCgiLi9kYXRhL0NvdXJzZXJhLVN3aWZ0S2V5LnppcCIsIGV4ZGlyID0gIi4vZGF0YSIpCmBgYAoKCgpgYGB7ciBjb21iaW5pbmd9CmZpbGVzMiA8LSBsaXN0LmRpcnMoIi4vZGF0YS9maW5hbCIpCmxzZmlsZSA8LSAgcGFzdGUwKGZpbGVzMlsyOjVdLCIvIiwKICAgICAgICAgICAgICAgICAgbGlzdC5maWxlcyhmaWxlczJbMjo1XSkpCmxkaXIgPC0gbm9ybWFsaXplUGF0aChmaWxlczJbMjo1XSwgInJiIikgIyBnaXZlcyB1cyB0aGUgZGlyZWN0b3J5IHBhdGgKZmluYWxkaXIgPC0gZGlyKHBhdGg9bGRpciwgZnVsbC5uYW1lcz1UUlVFKSAjIGdpdmVzIHVzIGZ1bGwgcGF0aCBhbmQgZmlsZW5hbWUKIyBmdWxsdGV4dCA8LSBsYXBwbHkoZmluYWxkaXIscmVhZExpbmVzKQpgYGAKCgpgYGB7ciBidWlsZHRhYmxlLCBtZXNzYWdlPUZBTFNFLCB3YXJuaW5nPUZBTFNFLCByZXN1bHRzPSdoaWRlJ30KIyMgTnVtX1dvcmRzIHRvdGFsIG51bWJlciBvZiB3b3JkcyBpbiBhIHR4dCBmaWxlCiMjIE1lYW5fV29yZHMgYXZlcmFnZSB3b3JkIHBlciBsaW5lIHBlciB0eHQgZmlsZQojIyBOdW1fTGluZXMgbnVtYmVyIG9mIGxpbmVzIHBlciB0eHQgZmlsZQpOdW1fV29yZHMgPC0gdmVjdG9yKCJudW1lcmljIikKTWVhbl9Xb3JkcyA8LSB2ZWN0b3IoIm51bWVyaWMiKQpOdW1fTGluZXMgPC0gdmVjdG9yKCJudW1lcmljIikKTWluX1dvcmRzIDwtIHZlY3RvcigibnVtZXJpYyIpCk1heF9Xb3JkcyA8LSB2ZWN0b3IoIm51bWVyaWMiKQpmb3IoaSBpbiAxOjEyKXsKTnVtX1dvcmRzW2ldIDwtIHByaW50KHN1bShzdHJpX2NvdW50X3dvcmRzKHJlYWRMaW5lcyhmaW5hbGRpcltbaV1dKSkpKQpNZWFuX1dvcmRzW2ldIDwtIHByaW50KHJvdW5kKG1lYW4oc3RyaV9jb3VudF93b3JkcyhyZWFkTGluZXMoZmluYWxkaXJbW2ldXSkpKSksZGlnaXRzPTIpCk1pbl9Xb3Jkc1tpXSA8LSBwcmludChyb3VuZChtaW4oc3RyaV9jb3VudF93b3JkcyhyZWFkTGluZXMoZmluYWxkaXJbW2ldXSkpKSksZGlnaXRzPTIpCk1heF9Xb3Jkc1tpXSA8LSBwcmludChyb3VuZChtYXgoc3RyaV9jb3VudF93b3JkcyhyZWFkTGluZXMoZmluYWxkaXJbW2ldXSkpKSksZGlnaXRzPTIpCk51bV9MaW5lc1tpXSA8LSBwcmludChsZW5ndGgocmVhZExpbmVzKGZpbmFsZGlyW2ldKSkpCn0KCmBgYAoKCmBgYHtyIGZpbmFsdGFibGV9Cmxpc3RfZmlsZXMgPC0gdGliYmxlKCdOYW1lJyA9IGxpc3QuZmlsZXMoZmlsZXMyWzI6NV0pLCAKICAgICAgICAgICAgICAgICAgICAgJ1NpemVfTUInID0gcm91bmQoZmlsZS5zaXplKGZpbmFsZGlyKS8xMF42LGRpZ2l0cyA9MiksCiAgICAgICAgICAgICAgICAgICAgIExpbmVzID0gTnVtX0xpbmVzLCBXb3JkcyA9IE51bV9Xb3JkcywgTWluID1NaW5fV29yZHMsCiAgICAgICAgICAgICAgICAgICAgIEF2ZXJhZ2U9IE1lYW5fV29yZHMsIE1heD1NYXhfV29yZHMpCmthYmxlKGxpc3RfZmlsZXMsIGFsaWduID0gYyhyZXAoJ2MnLCB0aW1lcz0gNSkpKQpgYGAKCmBgYHtyIFNvdXJjZURhdGF9CnNvdXJjZV9kYXRhIDwtIERpclNvdXJjZShsZGlyKQoKY29ycHVzX2RhdGEgPC0gVkNvcnB1cyhzb3VyY2VfZGF0YSkKCnN1bW1hcnkoY29ycHVzX2RhdGEpCmluc3BlY3QoY29ycHVzX2RhdGFbNV0pCm1ldGEoY29ycHVzX2RhdGFbWzVdXSwgImlkIikKYGBgCgoKYGBge3IgdHJhbnNmb3JtYXRpb259CnJlbW92ZVNwZWNpYWxDaGFycyA8LSBmdW5jdGlvbih4KSBnc3ViKCJbXmEtekEtWjAtOSBdIiwiIix4KQpnZXRUcmFuc2Zvcm1hdGlvbnMoKQoKdXNfbmV3cyA8LSB0bV9tYXAoY29ycHVzX2RhdGFbNV0sIHJlbW92ZVB1bmN0dWF0aW9uKQoKdXNfbmV3cyA8LSB0bV9tYXAodXNfbmV3cywgcmVtb3ZlTnVtYmVycykKdXNfbmV3cyA8LSB0bV9tYXAodXNfbmV3cywgY29udGVudF90cmFuc2Zvcm1lcih0b2xvd2VyKSkKdXNfbmV3cyA8LSB0bV9tYXAodXNfbmV3cywgcmVtb3ZlV29yZHMsIHN0b3B3b3JkcyhraW5kID0gImVuIikpCnVzX25ld3MgPC0gdG1fbWFwKHVzX25ld3MsIHN0cmlwV2hpdGVzcGFjZSkKdXNfbmV3cyA8LSB0bV9tYXAodXNfbmV3cywgc3RlbURvY3VtZW50KQp1c19uZXdzIDwtIHRtX21hcCh1c19uZXdzLCBjb250ZW50X3RyYW5zZm9ybWVyKHJlbW92ZVNwZWNpYWxDaGFycykpCnVzX25ld3NfdHJpeCA8LSBEb2N1bWVudFRlcm1NYXRyaXgodXNfbmV3cykKCmBgYAoKYGBge3IgZnJlcXVlbmN5fQppbnNwZWN0KHVzX25ld3NfdHJpeCkKZmluZEZyZXFUZXJtcyh1c19uZXdzX3RyaXgsIDI1KQpmaW5kQXNzb2NzKHVzX25ld3NfdHJpeCwgImZlZXQiLCAuMSkKaW5zcGVjdChyZW1vdmVTcGFyc2VUZXJtcyh1c19uZXdzX3RyaXgsLjQpKQpUZXJtcyh1c19uZXdzX3RyaXgpCmZyZXFxIDwtIGNvbFN1bXMoYXMubWF0cml4KHVzX25ld3NfdHJpeCkpCmBgYAoKYGBge3J9CgpWaWV3KHJldXRlcnMpCmBgYAoKCmBgYHtyIFNlbnRpbWVudFNjb3JlfQp3ZiA8LSBkYXRhLmZyYW1lKHdvcmQ9dHh0bWF0eFtbImRpbW5hbWVzIl1dW1siVGVybXMiXV0sIGZyZXE9dHh0bWF0eFtbInYiXV0pCgood2YkZnJlcSkKCmBgYAoKCmBgYHtyfQoKd29yZGNsb3VkMihkX1JjcmFuKQpgYGAKYGBge3J9ClJjcmFuX2xpc3QgPC0gZmluZEZyZXFUZXJtcyhkb2NfbWF0LCBsb3dmcmVxID0gMTApCmZpbmRGcmVxVGVybXMoZG9jX21hdCwgbG93ZnJlcSA9IDEwKQpgYGAKCmBgYHtyfQpmaW5kQXNzb2NzKGRvY19tYXQsIHRlcm1zID0gInNheSIsIGNvcmxpbWl0ID0gMC4wNSkKYGBgCgoKYGBge3J9CmJhcnBsb3QoZF9SY3JhblsxOjI1LF0kZnJlcSwgCiAgICAgICAgbGFzID0gMiwgCiAgICAgICAgbmFtZXMuYXJnID0gZF9SY3JhblsxOjI1LF0kd29yZCwKICAgICAgICBjb2wgPSJsaWdodHllbGxvdyIsIAogICAgICAgIG1haW4gPSJNb3N0IEZyZXF1ZW50IFdvcmRzIEZyb20gUi1jcmFuIFBhY2thZ2VzIiwKICAgICAgICB5bGFiID0gIldvcmQgQ291bnQiKQpgYGAKCg==</div>
 
 
 
@@ -1885,7 +2191,7 @@ $(document).ready(function () {
 <script>
 $(document).ready(function () {
   window.initializeSourceEmbed("index.Rmd");
-  window.initializeCodeFolding("show" === "show");
+  window.initializeCodeFolding("hide" === "show");
 });
 </script>
 
